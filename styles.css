@@ -1,0 +1,123 @@
+/* Default Font */
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+/* search bar */
+input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('./images/search.png');
+  background-size: 24px 24px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+  width: 80%;
+}
+
+#profile {
+  position: absolute;
+  padding-right: 20px;
+  padding-top: 20px;
+  right: 0;
+}
+
+#scoreList {
+  height: 120px;
+  overflow-y: auto;
+}
+
+#classList {
+  height: 400px;
+  width: 90%;
+  overflow-y: auto;
+}
+
+#classList ul {
+  list-style-type: none;
+}
+
+#classList li {
+  float: left;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+
+#profileIcon {
+  border: 2px solid lightblue;
+  border-radius: 5px;
+}
+
+
+/* Side Bar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #EFEFEF; /* light-grey */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px;
+  text-align: center;
+}
+
+/* Side Bar Links */
+.sidebar a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #111;
+  display: block;
+}
+
+/* for smaller screens */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar {font-size: 18px;}
+}
+
+/* Cards */
+div.mycard {
+  width: 150px;
+  text-align: center;
+  background-color: #ADD8E6;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+div.mycard:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
+
+/* contents of page */
+#main {
+  padding: 20px;
+  margin-left: 250px;
+}
+
+div.mycard2 {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  background-color: #ADD8E6;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+div.mycard2 p {
+  padding: 5px;
+}
+
+div.mycard2:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
