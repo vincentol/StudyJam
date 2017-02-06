@@ -1,5 +1,6 @@
 <html>
   <head>
+    <script src="js/study.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -13,7 +14,7 @@
 
     <!-- Side Bar -->
     <div id="mySideBar" class="sidebar">
-      <a href="#"><center><div class="mycard">New Class</div></center></a>
+      <a href="blank.html"><center><div class="mycard"><h3>New Class</h3></div></center></a>
       <br/>
       <h2>Scores</h2>
       <div id="scoreList">
@@ -31,18 +32,31 @@
       <form>
         <input type="text" name="search" placeholder="Search..">
       </form>
+
+      <!-- Breadcrumb -->
+      <ol class="breadcrumb">
+        <li class="active">> Home</li>
+      </ol>
+
       <h1>Classes</h1>
         <div id="classList">
           <ul>
-            <li><div class="mycard2"><p>Class 1</p></div></li>
-            <li><div class="mycard2"><p>Class 2</p></div></li>
-            <li><div class="mycard2"><p>Class 3</p></div></li>
-            <li><div class="mycard2"><p>Class 4</p></div></li>
-            <li><div class="mycard2"><p>Class 5</p></div></li>
+            <li><a href="blank.html"><div class="mycard2"><p>Class 1</p></div></a></li>
+            <li><a href="blank.html"><div class="mycard2"><p>Class 2</p></div></a></li>
+            <li><a href="blank.html"><div class="mycard2"><p>Class 3</p></div></a></li>
+            <li><a href="blank.html"><div class="mycard2"><p>Class 4</p></div></a></li>
+            <li><a href="blank.html"><div class="mycard2"><p>Class 5</p></div></a></li>
           </ul>
           <br/>
         </div>
+
+      <h1>Reminders</h1>
+      <ul>
+        <li>Midterm 2/30</li>
+      </ul>
+
     </div>
+    <!-- End Main Content -->
   </body>
 
 </html>
