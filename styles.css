@@ -75,7 +75,7 @@ input[type=text]:focus {
 }
 
 #classList {
-  height: 225px;
+  height: 180px;
   width: 90%;
   overflow-y: auto;
 }
@@ -125,15 +125,26 @@ input[type=text]:focus {
   .sidebar {font-size: 18px;}
 }
 
-/* Cards */
-div.mycard {
+/* buttons */
+.button1 {
   width: 150px;
   text-align: center;
   background-color: #ADD8E6;
   box-shadow: 0 0 5px 1px lightgrey;
 }
 
-div.mycard:hover {
+.notebutton {
+  width: 150px;
+  text-align: center;
+  background-color: lightgreen;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+.notebutton:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
+
+.button1:hover {
   box-shadow: 0 1px 5px 1px grey;
 }
 
@@ -141,6 +152,22 @@ div.mycard:hover {
 #main {
   padding: 20px;
   margin-left: 250px;
+}
+
+div.mynote {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  background-color: lightblue;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+div.mynote p {
+  padding: 5px;
+}
+
+div.mynote:hover {
+  box-shadow: 0 1px 5px 1px grey;
 }
 
 div.mycard2 {
@@ -157,4 +184,14 @@ div.mycard2 p {
 
 div.mycard2:hover {
   box-shadow: 0 1px 5px 1px grey;
+}
+
+ul#lb li {
+  display:inline;
+  margin-right: 80px;
+}
+
+img#lbpic {
+  width: 100px;
+  clip-path: circle();
 }
