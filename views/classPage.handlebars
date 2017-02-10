@@ -1,0 +1,68 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  
+  <body>
+
+    <!-- Profile -->
+    <div id="profile">
+      <div id="profileIcon"><button onclick="myFunction()" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-user"></span> User</button></div>
+    </div>
+      
+    <!-- Side Bar -->
+    <div id="mySideBar" class="sidebar">
+      <button onclick="myFunction()" class="notebutton"><center><h3>New Note</h3></center></button>
+      <br/>
+      <h2>Scores</h2>
+      <div id="scoreList">
+        <p>Class 1: --;</p>
+        <p>Class 2: --;</p>
+        <p>Class 3: --;</p>
+        <p>Class 4: --;</p>
+      </div>
+      <br>
+      <h2>Requests</h2>
+    </div>
+
+    <!-- Contents of App -->
+    <div id="main">
+      <form>
+        <input type="text" name="search" placeholder="Search..">
+      </form>
+
+      <!-- Breadcrumb -->
+      <ol class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li class="active"> ClassPage </li>
+      </ol>
+
+      <h1>Classes</h1>
+      <div id="classList">
+        <ul>
+          <li><a href="blank"><div class="mynote"><p>Note 1</p></div></a></li>
+          <li><a href="blank"><div class="mynote"><p>Note 2</p></div></a></li>
+          <li><a href="blank"><div class="mynote"><p>Note 3</p></div></a></li>
+          <li><a href="blank"><div class="mynote"><p>Note 4</p></div></a></li>
+          <li><a href="blank"><div class="mynote"><p>Note 5</p></div></a></li>
+        </ul>
+        <br/>
+      </div>
+
+      <h1>LeaderBoard</h1>
+      <ul id="lb">
+        <li><img id="lbpic" src="images/joash.jpg"></li>
+        <li><img id="lbpic" src="images/marissa.jpg"></li>
+        <li><img id="lbpic" src="https://igx.4sqi.net/img/user/100x100/179641628-H1BRVTZKI0QVEX3J.jpg"></li>
+      </ul>
+
+    </div>
+    <!-- End Main Content -->
+    <!-- Scripts -->
+    <script src="js/study.js"></script>
+  </body>
+
+</html>
