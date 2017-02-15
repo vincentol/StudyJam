@@ -8,6 +8,18 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
+// Firebase
+var firebase = require("firebase");
+var config = {
+    apiKey: "AIzaSyChJr4sJsuol5Z_8-qIiqluW3VgVEKgOIw",
+    authDomain: "studyjamapp.firebaseapp.com",
+    databaseURL: "https://studyjamapp.firebaseio.com",
+    storageBucket: "studyjamapp.appspot.com",
+    messagingSenderId: "682675386486"
+  };
+ firebase.initializeApp(config);
+ // End Firebase
+
 var index = require('./routes/index');
 var classPage = require('./routes/classPage');
 var blank = require('./routes/blank');
@@ -17,6 +29,7 @@ var addNotes = require('./routes/addNotes');
 // var user = require('./routes/user');
 
 var app = express();
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);

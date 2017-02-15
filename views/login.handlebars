@@ -6,12 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+
+
+    
     <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyChJr4sJsuol5Z_8-qIiqluW3VgVEKgOIw",
+        authDomain: "studyjamapp.firebaseapp.com",
+        databaseURL: "https://studyjamapp.firebaseio.com",
+        storageBucket: "studyjamapp.appspot.com",
+        messagingSenderId: "682675386486"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/study.js"></script>
-  </head>
-    
+    <script src="/js/study.js"></script>
+  </body>
 
 </html>
