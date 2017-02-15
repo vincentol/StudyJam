@@ -2,68 +2,80 @@
 
 <html>
   <head>
+    <title>StudyJam</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="js/study.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="js/study.js"></script>
   </head>
 
   <body>
 
+    <!-- Top -->
     <!-- Profile -->
-    <div id="profile">
-      <div id="profileIcon"><button onclick="myFunction()" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-user"></span> User</button></div>
-    </div>
-
-    <!-- Side Bar -->
-    <div id="mySideBar" class="sidebar">
-      <button onclick="myFunction()" class="button1"><center><h3>New Class</h3></center></button>
-      <br/>
-      <h2>Scores</h2>
-      <div id="scoreList">
-        <p>Class 1: --;</p>
-        <p>Class 2: --;</p>
-        <p>Class 3: --;</p>
-        <p>Class 4: --;</p>
+    <div class="top">
+      <div id="profile">
+        <div id="profileIcon"><button onclick="myFunction()" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-user"></span> User</button></div>
       </div>
-      <br>
-      <h2>Requests</h2>
-    </div>
 
-    <!-- Contents of App -->
-    <div id="main">
-      <form>
-        <input type="text" name="search" placeholder="Search..">
-      </form>
+      <!-- Search Bar -->
+      <div class="search">
+        <form>
+          <input type="text" name="search" placeholder="Search..">
+        </form>
+      </div>
 
       <!-- Breadcrumb -->
       <ol class="breadcrumb">
-        <li class="active"> Home</li>
+        <li class="active"><b>Home</b></li>
       </ol>
+    </div>
+    <!-- END TOP -->
+
+    <!-- Contents of App -->
+    <div id="main">
 
       <h1>Classes</h1>
+      <button type="button" class="button1" data-toggle="modal" data-target="#newClassModal">
+        <center>New Class</center>
+      </button>
+
+      <!--Modal for making a new class -->
+      <div id="newClassModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form action="/addClass">
+                Class Name:<br/>
+                <input type="text" name="newClassName">
+                <br/><br/>
+                <input type="submit" class="btn btn-default" value="Submit">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
+
         <div id="classList">
           <ul>
-            <li><a href="classPage"><div class="mycard2"><p>Class 1</p></div></a></li>
-            <li><a href="classPage"><div class="mycard2"><p>Class 2</p></div></a></li>
-            <li><a href="classPage"><div class="mycard2"><p>Class 3</p></div></a></li>
-            <li><a href="classPage"><div class="mycard2"><p>Class 4</p></div></a></li>
-            <li><a href="classPage"><div class="mycard2"><p>Class 5</p></div></a></li>
+          </ul>
+          <ul>
+            {{#each classes}}
+            <li><a href="classPage/{{className}}"><div class="mycard3"><p>{{className}}<br/>Score: {{classScore}}</p></div></a></li>
+            {{/each}}
           </ul>
           <br/>
         </div>
 
-      <h1>Reminders</h1>
-      <ul>
-        <li>Midterm 2/30</li>
-      </ul>
-
     </div>
     <!-- End Main Content -->
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="js/study.js"></script>
   </body>
 
 </html>

@@ -4,52 +4,15 @@ body {
   font-weight: 300;
 }
 
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0,0,0,0.4);
-}
-
-/* modal content/box */
-.modal-content {
-  background-color: blue;
-  margin: 15% auto;
-  padding 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-
-/* Close button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover, .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
 /* search bar */
-input[type=text] {
+.search input[type=text] {
   width: 130px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  background-image: url('./images/search.png');
+  background-image: url('../images/search.png');
   background-size: 24px 24px;
   background-position: 10px 10px;
   background-repeat: no-repeat;
@@ -58,24 +21,24 @@ input[type=text] {
   transition: width 0.4s ease-in-out;
 }
 
-input[type=text]:focus {
+.search input[type=text]:focus {
   width: 80%;
+}
+
+#newClassModal {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #profile {
   position: absolute;
   padding-right: 20px;
-  padding-top: 20px;
   right: 0;
 }
 
-#scoreList {
-  height: 120px;
-  overflow-y: auto;
-}
-
 #classList {
-  height: 180px;
+  height: 300px;
   width: 90%;
   overflow-y: auto;
 }
@@ -90,6 +53,21 @@ input[type=text]:focus {
   padding-bottom: 5px;
 }
 
+#notesList {
+  height: 180px;
+  width: 90%;
+  overflow-y: auto;
+}
+
+#notesList ul {
+  list-style-type: none;
+}
+
+#notesList li {
+  float: left;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
 
 #profileIcon {
   border: 2px solid lightblue;
@@ -120,14 +98,15 @@ input[type=text]:focus {
 }
 
 /* for smaller screens */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar {font-size: 18px;}
+@media screen {
+  .button1 {margin-left: 200px;}
 }
 
 /* buttons */
 .button1 {
+  height: 100%;
   width: 150px;
+  margin-left: 38px;
   text-align: center;
   background-color: #ADD8E6;
   box-shadow: 0 0 5px 1px lightgrey;
@@ -138,6 +117,8 @@ input[type=text]:focus {
   text-align: center;
   background-color: lightgreen;
   box-shadow: 0 0 5px 1px lightgrey;
+  margin-bottom: 5px;
+  margin-left: 38px;
 }
 
 .notebutton:hover {
@@ -149,9 +130,17 @@ input[type=text]:focus {
 }
 
 /* contents of page */
+.top {
+  padding: 20px;
+  padding-bottom: 0px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
 #main {
   padding: 20px;
-  margin-left: 250px;
+  padding-top: 0px;
+  width: 100%;
 }
 
 div.mynote {
@@ -171,18 +160,32 @@ div.mynote:hover {
 }
 
 div.mycard2 {
-  width: 150px;
-  height: 150px;
+  width: 148px;
+  height: 148px;
   text-align: center;
-  background-color: #FFF8DC;
+  background-color: lightblue;
   box-shadow: 0 0 5px 1px lightgrey;
 }
 
-div.mycard2 p {
+div.mycard2 #p {
   padding: 5px;
 }
 
 div.mycard2:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
+
+div.mycard3 {
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  background-color: #FFF8DC;
+  box-shadow: 0 0 5px 1px lightgrey;
+  font-weight: bold;
+  font-color: black;
+}
+
+div.mycard3:hover {
   box-shadow: 0 1px 5px 1px grey;
 }
 
