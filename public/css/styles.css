@@ -121,6 +121,15 @@ body {
   margin-left: 38px;
 }
 
+.quizbutton {
+  width: 150px;
+  text-align: center;
+  background-color: lightblue;
+  box-shadow: 0 0 5px 1px lightgrey;
+  margin-bottom: 5px;
+  margin-left: 38px;
+}
+
 .notebutton:hover {
   box-shadow: 0 1px 5px 1px grey;
 }

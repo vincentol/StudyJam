@@ -40,6 +40,10 @@
         <center>New Notes</center>
       </button>
 
+      <button type="button" class="quizbutton">
+	<center>Quizzes</center>
+      </button>
+
       <!--Modal for making a new class -->
       <div id="newClassModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -61,7 +65,7 @@
       <div id="notesList">
           <ul>
             {{#each notesList}}
-            <li><a href="https://docs.google.com/document/d/1yWRwZGi_XEoceIiOpSjOGASwWZ07Zk4W81jhMAHiDCw/edit?usp=sharing" target="_blank"><div class="mycard2"><p>{{notesName}}</p></div></a></li>
+            <li><a href="/notePage" target="_blank"><div class="mycard2"><p>{{notesName}}</p></div></a></li>
             {{/each}}
         </ul>
         <br/>
