@@ -1,0 +1,200 @@
+/* Default Font */
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 300;
+}
+
+/* search bar */
+.search input[type=text] {
+  width: 130px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('../images/search.png');
+  background-size: 24px 24px;
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.search input[type=text]:focus {
+  width: 80%;
+}
+
+#newClassModal {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#profile {
+  position: absolute;
+  padding-right: 20px;
+  right: 0;
+}
+
+#classList {
+  height: 300px;
+  width: 90%;
+  overflow-y: auto;
+}
+
+#classList ul {
+  list-style-type: none;
+}
+
+#classList li {
+  float: left;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+#notesList {
+  height: 180px;
+  width: 90%;
+  overflow-y: auto;
+}
+
+#notesList ul {
+  list-style-type: none;
+}
+
+#notesList li {
+  float: left;
+  padding-right: 5px;
+  padding-bottom: 5px;
+}
+
+#profileIcon {
+  border: 2px solid lightblue;
+  border-radius: 5px;
+}
+
+
+/* Side Bar */
+.sidebar {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #EFEFEF; /* light-grey */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px;
+  text-align: center;
+}
+
+/* Side Bar Links */
+.sidebar a {
+  text-decoration: none;
+  font-size: 25px;
+  color: #111;
+  display: block;
+}
+
+/* for smaller screens */
+@media screen {
+  .button1 {margin-left: 200px;}
+}
+
+/* buttons */
+.button1 {
+  height: 100%;
+  width: 150px;
+  margin-left: 38px;
+  text-align: center;
+  background-color: #ADD8E6;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+.notebutton {
+  width: 150px;
+  text-align: center;
+  background-color: lightgreen;
+  box-shadow: 0 0 5px 1px lightgrey;
+  margin-bottom: 5px;
+  margin-left: 38px;
+}
+
+.notebutton:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
+
+.button1:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
+
+/* contents of page */
+.top {
+  padding: 20px;
+  padding-bottom: 0px;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+#main {
+  padding: 20px;
+  padding-top: 0px;
+  width: 100%;
+}
+
+div.mynote {
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  background-color: lightblue;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+div.mynote p {
+  padding: 5px;
+}
+
+div.mynote:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
+
+div.mycard2 {
+  width: 148px;
+  height: 148px;
+  text-align: center;
+  background-color: lightblue;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+div.mycard2 #p {
+  padding: 5px;
+}
+
+div.mycard2:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
+
+div.mycard3 {
+  width: 250px;
+  height: 40px;
+  text-align: center;
+  background-color: #FFF8DC;
+  box-shadow: 0 0 5px 1px lightgrey;
+  font-weight: bold;
+  font-color: black;
+}
+
+div.mycard3:hover {
+  box-shadow: 0 1px 5px 1px grey;
+}
+
+ul#lb li {
+  display:inline;
+  margin-right: 80px;
+}
+
+img#lbpic {
+  width: 100px;
+  clip-path: circle();
+}

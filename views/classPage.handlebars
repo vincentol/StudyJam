@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+
+  </head>
+
+  <body>
+
+    <!-- Top -->
+    <!-- Profile -->
+    <div class="top">
+      <div id="profile">
+        <div id="profileIcon"><button onclick="myFunction()" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-user"></span> User</button></div>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search">
+        <form>
+          <input type="text" name="search" placeholder="Search..">
+        </form>
+      </div>
+
+      <!-- Breadcrumb -->
+      <ol class="breadcrumb">
+        <li><a href="/home"><b>Home</b></a></li>
+        <li class="active"><b> {{className}} </b></li>
+      </ol>
+    </div>
+    <!-- END TOP -->
+
+    <!-- Contents of App -->
+    <div id="main">
+
+      <h1>Notes</h1>
+
+      <button type="button" class="notebutton" data-toggle="modal" data-target="#newClassModal">
+        <center>New Notes</center>
+      </button>
+
+      <!--Modal for making a new class -->
+      <div id="newClassModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <form action="/addNotes">
+                Class Name:<br/>
+                <input type="text" name="newNotesName">
+                <br/><br/>
+                <input type="submit" class="btn btn-default" value="Submit">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
+
+      <div id="notesList">
+          <ul>
+            {{#each notesList}}
+            <li><a href="https://docs.google.com/document/d/1yWRwZGi_XEoceIiOpSjOGASwWZ07Zk4W81jhMAHiDCw/edit?usp=sharing" target="_blank"><div class="mycard2"><p>{{notesName}}</p></div></a></li>
+            {{/each}}
+        </ul>
+        <br/>
+      </div>
+
+      <h1>LeaderBoard</h1>
+      <ul id="lb">
+        <li><img id="lbpic" src="/images/joash.jpg"></li>
+        <li><img id="lbpic" src="/images/marissa.jpg"></li>
+        <li><img id="lbpic" src="https://igx.4sqi.net/img/user/100x100/179641628-H1BRVTZKI0QVEX3J.jpg"></li>
+      </ul>
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyChJr4sJsuol5Z_8-qIiqluW3VgVEKgOIw",
+        authDomain: "studyjamapp.firebaseapp.com",
+        databaseURL: "https://studyjamapp.firebaseio.com",
+        storageBucket: "studyjamapp.appspot.com",
+        messagingSenderId: "682675386486"
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/js/study.js"></script>
+
+  </body>
+
+</html>

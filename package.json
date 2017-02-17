@@ -1,0 +1,44 @@
+{
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.x",
+    "express3-handlebars": "*",
+    "firebase": "^3.6.9",
+    "firebase-admin": "^4.1.1"
+  },
+  "engines": {
+    "node": "0.10.x"
+  },
+  "name": "studyjamapp",
+  "description": "Collaborative studying web application",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vincentol/StudyJam.git"
+  },
+  "keywords": [
+    "study",
+    "jam",
+    "app",
+    "collaborative",
+    "studying",
+    "friendly",
+    "competition",
+    "note",
+    "taking",
+    "class",
+    "student",
+    "college"
+  ],
+  "author": "Vincent Lim",
+  "bugs": {
+    "url": "https://github.com/vincentol/StudyJam/issues"
+  },
+  "homepage": "https://github.com/vincentol/StudyJam#readme"
+}
