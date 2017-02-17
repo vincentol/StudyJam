@@ -26,6 +26,7 @@ var classPage = require('./routes/classPage');
 var blank = require('./routes/blank');
 var addClass = require('./routes/addClass');
 var addNotes = require('./routes/addNotes');
+var notePage = require('./routes/notes');
 // Example route
 // var user = require('./routes/user');
 
@@ -59,6 +60,7 @@ app.get('/blank', blank.viewBlank);
 app.get('/addClass', addClass.addNewClass);
 app.get('/addNotes', classPage.addNewNotes);
 app.get('/classPage/:name', classPage.viewClass);
+app.get('/notePage', notePage.view);
 // Example route
 // app.get('/users', user.list);
 
