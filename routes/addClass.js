@@ -1,4 +1,8 @@
 var data = require("../data.json");
+var firebase = require("firebase");
+var dbRef = firebase.database().ref();
+var classRef = dbRef.child("classes");
+
 
 exports.addNewClass = function(req, res) {
   var newClassName = req.query.newClassName;
@@ -6,7 +10,19 @@ exports.addNewClass = function(req, res) {
   var newClass = { className: newClassName,
     classScore: "0",
     notes: [],
-    leaderboard: []}
+    leaderboard: []
+  }
+
+
+
+  /*
+  classRef.push(newClass);
+
+  dbRef.on('value', function(snap) {
+    res.render('index',snap.val());
+  }); */
+
+
   for (var i = 0; i < data.classes.length; i++) {
     if (data.classes[i].className == newClassName) {
       check = false;

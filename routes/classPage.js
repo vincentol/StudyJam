@@ -23,7 +23,7 @@ exports.addNewNotes = function(req, res) {
   newNotesName = req.query.newNotesName;
   var newNote = { notesName: newNotesName }
   for (var i=0; i<data.classes.length; i++) {
-    if (data.classes[i].className) {
+    if (name == data.classes[i].className) {
       data.classes[i].notes.unshift(newNote);
       notesList = data.classes[i].notes;
       break;

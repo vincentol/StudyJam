@@ -8,7 +8,7 @@ var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
 
-/* Firebase
+//Firebase
 var firebase = require("firebase");
 var config = {
     apiKey: "AIzaSyChJr4sJsuol5Z_8-qIiqluW3VgVEKgOIw",
@@ -18,7 +18,7 @@ var config = {
     messagingSenderId: "682675386486"
   };
 firebase.initializeApp(config);
-// End Firebase*/
+//End Firebase
 
 var login = require('./routes/login');
 var index = require('./routes/index');
