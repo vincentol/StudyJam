@@ -16,6 +16,21 @@
         <div id="profileIcon"><button onclick="myFunction()" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-user"></span> User</button></div>
       </div>
 
+		  <!-- User Icon -->
+			<div id="profile">
+					<div id="profileIcon"><button onclick="viewUser()"
+									class="btn btn-info btn-sm dropbtn">
+									<span class="glyphicon glyphicon-user">
+									</span> Profile
+							</button>
+							<div id="myDropdown" class="dropdown-content">
+									<a href="#">Profile</a>
+									<a href="#">Contacts</a>
+									<a href="#">Settings</a>
+							</div>
+					</div>
+			</div>
+
       <!-- Search Bar -->
       <div class="search">
         <form>
@@ -42,6 +57,10 @@
 
       <button type="button" class="quizbutton" onclick="myFunction()">
 	<center>Quizzes</center>
+      </button>
+
+      <button type="button" class="studyguidebutton" onclick="myFunction()">
+	<center>Study Guide</center>
       </button>
 
       <!--Modal for making a new class -->
