@@ -5,6 +5,7 @@ var classRef = dbRef.child("classes");
 
 
 exports.addNewClass = function(req, res) {
+  console.log("CALLED");
   var newClassName = req.query.newClassName;
   var check = true;
   var newClass = { className: newClassName,
@@ -30,5 +31,5 @@ exports.addNewClass = function(req, res) {
     }
   }
   if (check) data.classes.unshift(newClass);
-  res.render('index', data);
+  res.json('index', data);
 }
