@@ -25,7 +25,13 @@ body {
   width: 80%;
 }
 
-#newClassModal {
+#newClassModal1 {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#newClassModal2 {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
@@ -82,7 +88,7 @@ body {
   position: fixed;
   z-index: 1;
   top: 0;
-  left: 0;
+  right: 0;
   background-color: #EFEFEF; /* light-grey */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px;
@@ -109,6 +115,24 @@ body {
   margin-left: 38px;
   text-align: center;
   background-color: #ADD8E6;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+.addquizquestion {
+  height: 15%;
+  width: 150px;
+  margin-right: 38px;;
+  text-align: center;
+  background-color: turquoise;
+  box-shadow: 0 0 5px 1px lightgrey;
+}
+
+.addvocabterm {
+  height: 15%;
+  width: 150px;
+  margin-right: 38px;;
+  text-align: center;
+  background-color: violet;
   box-shadow: 0 0 5px 1px lightgrey;
 }
 
