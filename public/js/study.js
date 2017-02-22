@@ -13,8 +13,12 @@ function initializePage() {
 function addClass() {
   var x = document.getElementById("addClassForm");
   var name =(x.elements[0].value);
-  $.get("/addClass");
+  $.get("/addClass/"+name, addClassFun);
   //alert("YAY!");
+}
+
+function addClassFun (result) {
+  window.location.reload();
 }
 
 function myFunction() {

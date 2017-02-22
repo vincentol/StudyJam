@@ -57,7 +57,7 @@ if ('development' == app.get('env')) {
 app.get('/', login.view);
 app.get('/home', index.view);
 app.get('/blank', blank.viewBlank);
-app.get('/addClass', addClass.addNewClass);
+app.get('/addClass/:name', addClass.addNewClass);
 app.get('/addNotes', classPage.addNewNotes);
 app.get('/classPage/:name', classPage.viewClass);
 app.get('/notePage', notePage.view);
