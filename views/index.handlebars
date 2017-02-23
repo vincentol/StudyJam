@@ -20,13 +20,37 @@
 						<div id="profileIcon"><button onclick="viewUser()"
 										class="btn btn-info btn-sm dropbtn">
 										<span class="glyphicon glyphicon-user">
-									</span> Profile
+									</span> Account
 							</button>
 						<div id="myDropdown" class="dropdown-content">
 								<a href="#">Profile</a>
 								<a href="#">Contacts</a>
 								<a href="#">Sign Out</a>
 							</div>
+
+
+							<!-- Modal for profile -->
+							<div id="myDropdown" class="dropdown-content">
+									<button id="myBtn">Profile</button>
+									<div id="myModal" class="modalProfile">
+											<div class="modal-content">
+													<div class="modal-header">
+															<span class="close">&times;</span>
+															<h2>John Doe</h2>
+													</div>
+													<div class="modal-body">
+															<img src="/images/steve.jpg">
+															<p>UCSD, Class of 2019</p>
+															<p>Major: Cognitive Science</p>
+															<p>Minor: Computer Science</p>
+															<p>GPA: 3.4</p>
+													</div>
+											</div>
+									</div>
+
+									<a href="#">Settings</a>
+								  <a href="/">Sign out</a>
+								</div>
 					</div>
 			</div>
 
@@ -57,7 +81,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-body">
-              <form action="/addClass">
+              <form id="addClassForm" action="javascript:addClass();">
                 Class Name:<br/>
                 <input type="text" name="newClassName">
                 <br/><br/>
