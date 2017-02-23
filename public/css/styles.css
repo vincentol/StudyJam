@@ -136,6 +136,15 @@ body {
   box-shadow: 0 0 5px 1px lightgrey;
 }
 
+.closeWin {
+  height: 5%;
+	width: 75px;
+	margin-right: 38px;
+	text-align: center;
+	background-color: gray;
+	box-shadow: 0 0 5px 1px lightgrey;
+}
+
 .notebutton {
   width: 150px;
   text-align: center;

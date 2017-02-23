@@ -40,6 +40,11 @@ function myFunction() {
   alert("Oops! This is not yet implemented!");
 }
 
+function closeWin() {
+  window.close();
+}
+
+
 
 function viewUser() {
 		document.getElementById("myDropdown").classList.toggle("show");
