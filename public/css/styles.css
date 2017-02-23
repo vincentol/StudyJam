@@ -302,7 +302,7 @@ img#lbpic {
 /* Profile user modal */
 
 /* The Modal (background) */
-.modal {
+.modalProfile {
    display: none; /* Hidden by default */
    position: fixed; /* Stay in place */
    z-index: 1; /* Sit on top */
