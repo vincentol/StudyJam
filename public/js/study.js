@@ -10,16 +10,31 @@ function initializePage() {
   });
 }
 
+
+
+
+/** Adding Functions **/
 function addClass() {
   var x = document.getElementById("addClassForm");
   var name =(x.elements[0].value);
-  $.get("/addClass/"+name, addClassFun);
+  $.get("/addClass/"+name, reloadFun);
   //alert("YAY!");
 }
 
-function addClassFun (result) {
+function reloadFun (result) {
   window.location.reload();
 }
+
+function addNote() {
+  var x = document.getElementById("addNoteForm");
+  var name =(x.elements[0].value);
+  $.get("/addNotes/"+name, reloadFun);
+  //alert("YAY!");
+}
+/** End Adding Functions **/
+
+
+
 
 function myFunction() {
   alert("Oops! This is not yet implemented!");

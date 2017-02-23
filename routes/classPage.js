@@ -20,7 +20,7 @@ exports.viewClass = function(req, res){
 exports.addNewNotes = function(req, res) {
   var bool;
   var save;
-  newNotesName = req.query.newNotesName;
+  newNotesName = req.params.name;
   var newNote = { notesName: newNotesName }
   for (var i=0; i<data.classes.length; i++) {
     if (name == data.classes[i].className) {
@@ -30,9 +30,11 @@ exports.addNewNotes = function(req, res) {
     }
   }
 
-
+  res.json(data);
+  /*
   res.render('classPage', {
    'className': name,
    'notesList': notesList
   });
+  */
 };
