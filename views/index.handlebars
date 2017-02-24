@@ -31,26 +31,29 @@
 
 							<!-- Modal for profile -->
 							<div id="myDropdown" class="dropdown-content">
-									<button id="myBtn">Profile</button>
-									<div id="myModal" class="modalProfile">
-											<div class="modal-content">
-													<div class="modal-header">
-															<span class="close">&times;</span>
-															<h2>John Doe</h2>
-													</div>
-													<div class="modal-body">
-															<img src="/images/steve.jpg">
-															<p>UCSD, Class of 2019</p>
-															<p>Major: Cognitive Science</p>
-															<p>Minor: Computer Science</p>
-															<p>GPA: 3.4</p>
-													</div>
-											</div>
-									</div>
-								  <a href="/">Sign out</a>
-								</div>
-					</div>
-			</div>
+                  <a href="#" data-toggle="modal" data-target="#myModal">Profile</a>
+                  <a href="/">Sign out</a>
+
+              </div>
+            </div>
+    </div>
+
+        <div id="myModal" class="modal fade" style="padding-top: 100px">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-toggle="modal" data-target="#myModal">&times;</span>
+                    <h2>John Doe</h2>
+                </div>
+                <div class="modal-body">
+                    <img src="/images/steve.jpg">
+                    <p>UCSD, Class of 2019</p>
+                    <p>Major: Cognitive Science</p>
+                    <p>Minor: Computer Science</p>
+                    <p>GPA: 3.4</p>
+                </div>
+            </div>
+        </div>
+
 
       <!-- Search Bar -->
       <div class="search">

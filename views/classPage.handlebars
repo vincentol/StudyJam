@@ -17,36 +17,38 @@
         <div id="profileIcon"><button onclick="myFunction()" class="btn btn-info btn-sm"><span class="glyphicon glyphicon-user"></span> User</button></div>
       </div>
 
-		  <!-- User Icon -->
-			<div id="profile">
-					<div id="profileIcon"><button onclick="viewUser()"
-									class="btn btn-info btn-sm dropbtn">
-									<span class="glyphicon glyphicon-user">
-									</span> Account
-							</button>
+      <!-- User Icon -->
+      <div id="profile">
+        <div id="profileIcon"><button onclick="viewUser()"
+                                      class="btn btn-info btn-sm dropbtn">
+            <span class="glyphicon glyphicon-user">
+            </span> Account
+          </button>
 
-						  <!-- Modal for profile -->
-							<div id="myDropdown" class="dropdown-content">
-									<button id="myBtn">Profile</button>
-									<div id="myModal" class="modalProfile">
-											<div class="modal-content">
-													<div class="modal-header">
-															<span class="close">&times;</span>
-															<h2>John Doe</h2>
-													</div>
-													<div class="modal-body">
-															<img src="/images/steve.jpg">
-															<p>UCSD, Class of 2019</p>
-															<p>Major: Cognitive Science</p>
-															<p>Minor: Computer Science</p>
-															<p>GPA: 3.4</p>
-													</div>
-											</div>
-									</div>
-									<a href="/">Sign Out</a>
-							</div>
-					</div>
-			</div>
+          <!-- Modal for profile -->
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#" data-toggle="modal" data-target="#myModal">Profile</a>
+            <a href="/">Sign out</a>
+
+          </div>
+        </div>
+      </div>
+
+      <div id="myModal" class="modal fade" style="padding-top: 100px">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>John Doe</h2>
+          </div>
+          <div class="modal-body">
+            <img src="/images/steve.jpg">
+            <p>UCSD, Class of 2019</p>
+            <p>Major: Cognitive Science</p>
+            <p>Minor: Computer Science</p>
+            <p>GPA: 3.4</p>
+          </div>
+        </div>
+      </div>
 
       <!-- Search Bar -->
       <div class="search">
@@ -105,7 +107,7 @@
             <div class="modal-body">
               <h2>Current Vocab Terms:</h2><br/>
               {{#each vocabList}}
-              <p>{{term}} - {{def}}</p>
+              <p><b>{{term}}</b> - {{def}}</p>
               {{/each}}
               <br/><br/>
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

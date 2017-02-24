@@ -14,11 +14,12 @@ var timeoutId,
     $status = $('#status'),
     $notes = $('#notes');
 
-$notes.keypress(function() {
+$notes.keyup(function() {
   $status.attr('class', 'pending').text('changes pending');
   if (timeoutId) clearTimeout(timeoutId);
+  var information = $(this).val();
   timeoutId = setTimeout(function () {
-    $.get("/saveNotes", save);
+    $.get("/saveNotes/" + information, save);
     $status.attr('class', 'saved').text('changes saved');
   }, 750);
 });
@@ -64,11 +65,13 @@ function hideModal() {
 }
 
 function addQuizQ() {
+  console.log("Called");
   var x = document.getElementById("quizForm");
   var question = (x.elements[0].value);
+  console.log(question);
   var answer = (x.elements[1].value);
-  x.reset();
   $.get("/addQuizQ/"+question+"/"+answer, hideModal);
+  x.reset();
 }
 
 function myFunction() {

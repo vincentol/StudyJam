@@ -11,7 +11,7 @@
   <body>
     <div class="rightSide" style="margin-left: 10px; margin-top: 10px">
       <div id="status" class="nochange">no change</div>
-      <textarea id="notes" cols="141" rows="28" placeholder="Take Notes Here"></textarea>
+      <textarea id="notes" name="notes" cols="141" rows="28" placeholder="Take Notes Here">{{myData}}</textarea>
     </div>
 
       <div class="sidebar">
@@ -27,7 +27,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-body">
-              <form id="vocabForm" action="javascript:addVocab()">
+              <form id="vocabForm" method="post" action="javascript:addVocab()">
                 Vocab Term:<br/>
                 <input type="text" name="Term"> <br>
                 Definition:<br/>
@@ -46,7 +46,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-body">
-              <form id="quizForm" action="javascript:addQuizQ()">
+              <form id="quizForm" method="post" action="javascript:addQuizQ()">
                 Question:<br/>
                 <input type="text" name="Term"> <br>
                 Answer:<br/>
