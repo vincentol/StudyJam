@@ -15,11 +15,10 @@ var timeoutId,
     $notes = $('#notes');
 
 $notes.keypress(function() {
-  console.log($notes.val());
   $status.attr('class', 'pending').text('changes pending');
   if (timeoutId) clearTimeout(timeoutId);
   timeoutId = setTimeout(function () {
-    $.get("/saveNotes/", save);
+    $.get("/saveNotes", save);
     $status.attr('class', 'saved').text('changes saved');
   }, 750);
 });
