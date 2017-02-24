@@ -35,7 +35,6 @@ exports.viewNote = function(req, res) {
 };
 
 exports.saveNote = function(req, res) {
-  console.log(req.params.notes);
   var myNotes;
   for (var i=0; i<data.classes.length; i++) {
     if (name == data.classes[i].className) {
@@ -46,6 +45,8 @@ exports.saveNote = function(req, res) {
   for (var x=0; x<myNotes.length; x++) {
     if (noteName == data.classes[i].notes[x].notesName) {
       //data.classes[i].notes[x].noteData = 
+      console.log("SAVE HERE");
+      break;
     }
   }
   console.log("CALLED");
