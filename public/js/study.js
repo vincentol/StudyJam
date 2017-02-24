@@ -10,8 +10,22 @@ function initializePage() {
   });
 }
 
+var timeoutId,
+    $status = $('#status'),
+    $notes = $('#notes');
 
+$notes.keypress(function() {
+  $status.attr('class', 'pending').text('changes pending');
+  if (timeoutId) clearTimeout(timeoutId);
+  timeoutId = setTimeout(function () {
+    $.get("/saveNotes", save);
+    $status.attr('class', 'saved').text('changes saved');
+  }, 750);
+});
 
+function save() {
+  console.log("In Save");
+}
 
 /** Adding Functions **/
 function addClass() {
@@ -33,8 +47,29 @@ function addNote() {
 }
 /** End Adding Functions **/
 
+function goBack() {
+  location.replace(document.referrer);
+}
 
+function addVocab() {
+  var x = document.getElementById("vocabForm");
+  var term = (x.elements[0].value);
+  var def = (x.elements[1].value);
+  x.reset();
+  $.get("/addVocab/"+term+"/"+def, hideModal);
+}
 
+function hideModal() {
+  $('.modal').modal('hide');
+}
+
+function addQuizQ() {
+  var x = document.getElementById("quizForm");
+  var question = (x.elements[0].value);
+  var answer = (x.elements[1].value);
+  x.reset();
+  $.get("/addQuizQ/"+question+"/"+answer, hideModal);
+}
 
 function myFunction() {
   alert("Oops! This is not yet implemented!");

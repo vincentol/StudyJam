@@ -4,6 +4,11 @@ body {
   font-weight: 300;
 }
 
+#status { font-size: 13px; }
+#status.nochange { color: #aaa; }
+#status.pending { color: #a00; }
+#status.saved { color: #0a0; }
+
 /* search bar */
 .search input[type=text] {
   width: 130px;
@@ -23,6 +28,11 @@ body {
 
 .search input[type=text]:focus {
   width: 80%;
+}
+
+.myModal {
+  max-height: 420px;
+  overflow-y: auto;
 }
 
 #newClassModal1 {
@@ -97,10 +107,9 @@ body {
 
 /* Side Bar Links */
 .sidebar a {
-  text-decoration: none;
-  font-size: 25px;
+  /*font-size: 25px;
   color: #111;
-  display: block;
+  display: block;*/
 }
 
 /* for smaller screens */
