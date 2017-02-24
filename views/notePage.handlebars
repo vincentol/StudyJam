@@ -8,22 +8,26 @@
   </head>
 
   <body>
-  	<textarea id="notes" cols="80" rows="20" position="float-left" placeholder="TAKE NOTES HERE"></textarea>
-    <div class="rightSide" style="margin-left:200px">
+    <div class="rightSide" style="margin-left: 10px; margin-top: 10px">
+      <div id="status" class="nochange">no change</div>
+      <textarea id="notes" cols="141" rows="28" placeholder="Take Notes Here"></textarea>
     </div>
 
       <div class="sidebar">
-	<button type="button" class="addvocabterm" data-toggle="modal" data-target="#newClassModal1">Add Vocab Term</button>
-	<button type="button" class="addquizquestion" data-toggle="modal" data-target="#newClassModal2">Add Quiz Question</button>
-	<button type="button" class="closeWin" onclick="closeWin()"><center>Exit</center></button>
-			
+        <button type="button" class="addvocabterm" data-toggle="modal" data-target="#newClassModal1">Add Vocab Term</button>
+        <button type="button" class="addquizquestion" data-toggle="modal" data-target="#newClassModal2">Add Quiz Question</button>
+        </br>
+        </br>
+        </br>
+        <button type="button" onclick="goBack()">Go Back To Class Page</button>
       </div>
+
       <!--Modal for making a new class -->
       <div id="newClassModal1" class="modal fade" role="dialog">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-body">
-              <form action="#">
+              <form id="vocabForm" action="javascript:addVocab()">
                 Vocab Term:<br/>
                 <input type="text" name="Term"> <br>
                 Definition:<br/>
@@ -42,7 +46,7 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-body">
-              <form action="#">
+              <form id="quizForm" action="javascript:addQuizQ()">
                 Question:<br/>
                 <input type="text" name="Term"> <br>
                 Answer:<br/>
@@ -73,7 +77,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/js/study.js"></script>
   </body>
 

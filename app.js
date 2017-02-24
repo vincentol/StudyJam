@@ -59,8 +59,11 @@ app.get('/home', index.view);
 app.get('/blank', blank.viewBlank);
 app.get('/addClass/:name', addClass.addNewClass);
 app.get('/addNotes/:name', classPage.addNewNotes);
+app.get('/addVocab/:term/:def', classPage.addVocab);
+app.get('/addQuizQ/:question/:answer', classPage.addQuizQ);
 app.get('/classPage/:name', classPage.viewClass);
-app.get('/notePage', notePage.view);
+app.get('/notePage/:name', classPage.viewNote);
+app.get('/saveNotes/:notes', classPage.saveNote);
 // Example route
 // app.get('/users', user.list);
 

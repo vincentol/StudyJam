@@ -10,7 +10,9 @@ exports.addNewClass = function(req, res) {
   var newClass = { className: newClassName,
     classScore: "0",
     notes: [],
-    leaderboard: []
+    leaderboard: [],
+    vocab: [],
+    quizQ: []
   }
 
 
