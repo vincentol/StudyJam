@@ -6,6 +6,7 @@ var quizList;
 var newNotesName;
 var currClass;
 var classUrl;
+var noteName;
 
 exports.viewClass = function(req, res){
   name = req.params.name;
@@ -29,12 +30,12 @@ exports.viewClass = function(req, res){
 };
 
 exports.viewNote = function(req, res) {
-  console.log(name);
+  noteName = req.params.name;
   res.render('notePage');
 };
 
 exports.saveNote = function(req, res) {
-  noteName = req.param.name;
+  console.log(req.params);
   var myNotes;
   for (var i=0; i<data.classes.length; i++) {
     if (name == data.classes[i].className) {
@@ -42,11 +43,11 @@ exports.saveNote = function(req, res) {
       break;
     }
   }
-  /*for (var x=0; x<myNotes.length; x++) {
-    if () {
-      
+  for (var x=0; x<myNotes.length; x++) {
+    if (noteName == data.classes[i].notes[x].notesName) {
+      //data.classes[i].notes[x].noteData = 
     }
-  }*/
+  }
   console.log("CALLED");
   // TODO
 };

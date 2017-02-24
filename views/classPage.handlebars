@@ -21,30 +21,12 @@
 					<div id="profileIcon"><button onclick="viewUser()"
 									class="btn btn-info btn-sm dropbtn">
 									<span class="glyphicon glyphicon-user">
-									</span> Account
+									</span> Profile
 							</button>
-
-							<!-- Modal for profile -->
 							<div id="myDropdown" class="dropdown-content">
-									<button id="myBtn">Profile</button>
-									<div id="myModal" class="modalProfile">
-											<div class="modal-content">
-													<div class="modal-header">
-															<span class="close">&times;</span>
-															<h2>John Doe</h2>
-													</div>
-													<div class="modal-body">
-															<img src="/images/steve.jpg">
-															<p>UCSD, Class of 2019</p>
-															<p>Major: Cognitive Science</p>
-															<p>Minor: Computer Science</p>
-															<p>GPA: 3.4</p>
-													</div>
-											</div>
-									</div>
-											
-								  <a href="#">Settings</a>
-									<a href="/">Sign out</a>
+									<a href="#">Profile</a>
+									<a href="#">Contacts</a>
+									<a href="#">Settings</a>
 							</div>
 					</div>
 			</div>
@@ -137,7 +119,7 @@
       <div id="notesList">
           <ul>
             {{#each notesList}}
-            <li><a href="/notePage"><div class="mycard2"><p>{{notesName}}</p></div></a></li>
+            <li><a href="/notePage/{{notesName}}"><div class="mycard2"><p>{{notesName}}</p></div></a></li>
             {{/each}}
         </ul>
         <br/>
