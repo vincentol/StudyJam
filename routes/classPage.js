@@ -42,11 +42,11 @@ exports.saveNote = function(req, res) {
       break;
     }
   }
-  for (var x=0; x<myNotes.length; x++) {
+  /*for (var x=0; x<myNotes.length; x++) {
     if () {
       
     }
-  }
+  }*/
   console.log("CALLED");
   // TODO
 };
