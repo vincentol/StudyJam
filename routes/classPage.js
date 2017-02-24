@@ -35,7 +35,7 @@ exports.viewNote = function(req, res) {
 };
 
 exports.saveNote = function(req, res) {
-  console.log(req.params);
+  console.log(req.params.notes);
   var myNotes;
   for (var i=0; i<data.classes.length; i++) {
     if (name == data.classes[i].className) {
