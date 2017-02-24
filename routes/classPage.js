@@ -7,6 +7,7 @@ var newNotesName;
 var currClass;
 var classUrl;
 var noteName;
+var myData;
 
 exports.viewClass = function(req, res){
   name = req.params.name;
@@ -31,10 +32,25 @@ exports.viewClass = function(req, res){
 
 exports.viewNote = function(req, res) {
   noteName = req.params.name;
-  res.render('notePage');
+  for (var i=0; i<data.classes.length; i++) {
+    if (name == data.classes[i].className) {
+      var myNotes = data.classes[i].notes;
+      break;
+    }
+  }
+  for (var x=0; x<myNotes.length; x++) {
+    if (noteName == data.classes[i].notes[x].notesName) {
+      myData = (data.classes[i].notes[x].noteData);
+      break;
+    }
+  }
+  res.render('notePage', {
+    'myData': myData
+  });
 };
 
 exports.saveNote = function(req, res) {
+  var info = req.params.info;
   var myNotes;
   for (var i=0; i<data.classes.length; i++) {
     if (name == data.classes[i].className) {
@@ -44,13 +60,12 @@ exports.saveNote = function(req, res) {
   }
   for (var x=0; x<myNotes.length; x++) {
     if (noteName == data.classes[i].notes[x].notesName) {
-      //data.classes[i].notes[x].noteData = 
-      console.log("SAVE HERE");
+      data.classes[i].notes[x].noteData = info;
+      console.log(data.classes[i].notes[x].noteData);
       break;
     }
   }
-  console.log("CALLED");
-  // TODO
+  res.json(data);
 };
 
 exports.addVocab = function(req, res) {
