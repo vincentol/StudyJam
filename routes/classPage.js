@@ -50,7 +50,7 @@ exports.viewNote = function(req, res) {
 };
 
 exports.saveNote = function(req, res) {
-  var info = req.params.info;
+  var info = req.body.information;
   var myNotes;
   for (var i=0; i<data.classes.length; i++) {
     if (name == data.classes[i].className) {

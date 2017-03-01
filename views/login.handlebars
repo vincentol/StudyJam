@@ -1,16 +1,24 @@
 <!doctype html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
-    form {
+    body {
+      background-image: url("/images/background.jpg");
+      background-repeat: no-repeat;
+    }
+    #myForm {
+      margin: 100px 20% 0% 20%;
+      background-color: white;
       border: 3px solid #f1f1f1;
     }
 
     input[type=text], input[type=password] {
         width: 100%;
         padding: 12px 20px;
-        margin: 8px 0;
+        margin: 0px 0px 10px 0px;
         display: inline-block;
         border: 1px solid #ccc;
         box-sizing: border-box;
@@ -23,7 +31,7 @@
       margin: 8px 0;
       border: none;
       cursor: pointer;
-      width: 100%;
+      width: 80%;
     }
 
     .cancelbtn {
@@ -32,17 +40,12 @@
         background-color: #f44336;
     }
 
-    .imgcontainer {
-        text-align: center;
-        margin: 24px 0 12px 0;
+    .nbtn {
+      width: auto;
+      margin: 0px 0px 10px 0px;
     }
 
-    img.avatar {
-        width: 40%;
-        border-radius: 50%;
-    }
-
-    .container {
+    .myContainer {
         padding: 16px;
     }
 
@@ -64,27 +67,59 @@
 }
 </style>
 <body>
+  <center>
 
-<h2>Login Form</h2>
+<form action="javascript:login();" id="myForm">
 
-<form action="/home">
-
-  <div class="container">
-    <label><b>Username</b></label>
+  <h2>Login Form</h2>
+  <div class="myContainer">
+    <label><b>Username:</b></label>
+    <br/>
     <input type="text" placeholder="Enter Username" name="uname" required>
-
-    <label><b>Password</b></label>
+    <br/>
+    <label><b>Password:</b></label>
+    <br/>
     <input type="password" placeholder="Enter Password" name="psw" required>
-        
+    <br/>
     <button type="submit">Login</button>
-    <input type="checkbox" checked="checked"> Remember me
+    <br/>
+    <!--<span class="psw">Forgot <a href="#">password?</a></span>-->
   </div>
 
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Register</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+  <div class="myContainer" style="background-color:#f1f1f1">
   </div>
 </form>
+<button type="button" class="cancelbtn" data-toggle="modal" data-target="#registerModal">Register</button>
+  </center>
+
+  <!-- Register Modal -->
+  <div id="registerModal" class="modal fade" style="padding-top: 100px">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><center>Register</center></h2>
+      </div>
+      <div class="modal-body">
+        <form id="registerForm" action="javascript:register();">
+          <br/>
+          <b>Email:</b><br/>
+          <input type="text" name="newEmail" placeholder="example@email.com" required>
+          <br/>
+          <b>Username:</b><br/>
+          <input type="text" name="newUsername" placeholder="Enter Username..." required>
+          <br/>
+          <b>Password:</b><br/>
+          <input type="text" name="newPassword" placeholder="Enter Password..." required>
+          <br/>
+          <input type="submit" class="nbtn btn btn-default" value="Submit">
+          <button type="button" class="nbtn btn btn-default" data-dismiss="modal">Cancel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="/js/study.js"></script>
 
 </body>
 </html>

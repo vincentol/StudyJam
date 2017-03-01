@@ -1,5 +1,8 @@
 'use strict';
 
+var currentUsername = null;
+var currentUserIndex = (-1);
+
 $(document).ready(function() {
   initializePage();
 })
@@ -17,9 +20,9 @@ var timeoutId,
 $notes.keyup(function() {
   $status.attr('class', 'pending').text('changes pending');
   if (timeoutId) clearTimeout(timeoutId);
-  var information = $(this).val();
+  var information = {"information": $(this).val()};
   timeoutId = setTimeout(function () {
-    $.get("/saveNotes/" + information, save);
+    $.post("/saveNotes", information, save);
     $status.attr('class', 'saved').text('changes saved');
   }, 750);
 });
@@ -87,13 +90,22 @@ function addQuizQ() {
   var quizQ = {"question": question,
         "answer": answer};
   x.reset();
-  $.post("/addQuizQ", quizQ,hideModal);
+  $.post("/addQuizQ", quizQ, hideModal);
 }
 
 function myFunction() {
   alert("Oops! This is not yet implemented!");
 }
 
+function login() {
+  // move to loginControl
+  window.location.replace("/home");
+  // get login
+}
+
+function loginControl() {
+
+}
 
 function viewUser() {
 		document.getElementById("myDropdown").classList.toggle("show");

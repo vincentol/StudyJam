@@ -63,7 +63,7 @@ app.post('/addVocab', classPage.addVocab);
 app.post('/addQuizQ', classPage.addQuizQ);
 app.get('/classPage/:name', classPage.viewClass);
 app.get('/notePage/:name', classPage.viewNote);
-app.get('/saveNotes/:info', classPage.saveNote);
+app.post('/saveNotes', classPage.saveNote);
 // Example route
 // app.get('/users', user.list);
 
