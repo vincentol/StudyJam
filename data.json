@@ -2,6 +2,8 @@
 	"classes": [],
   "classExists": false,
   "notesExist": false,
+  "registerChecks": [false, false, false],
+  "loginChecks": [false, false],
   "users": [],
   "newClasses": {}
 }

@@ -1,20 +1,33 @@
-/* When the user clicks on the button,
- * toggle between hiding and showing the dropdown content */
-function myFunction() {
-		document.getElementById("myDropdown").classList.toggle("show");
-}
+// Initialize Firebase
+var data = require('../data.json');
+var unames = [];
+var pwords = [];
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-		if (!event.target.matches('.dropbtn)) {
+exports.register = function(req, res){
+  console.log("Here");
+  var account = req.body;
+  // implement existing check here TODO
+  data.users.push(account);
+  unames.push(account.uname);
+  pwords.push(account.pword);
+  res.json(data);
+};
 
-				var dropdowns = document.getElementsByClassName("dropdown-content");
-				var i;
-				for (i = 0; i < dropdowns.length; i++) {
-						var openDropdown = dropdowns[i];
-						if (openDropdown.classList.contains('show')) {
-								openDropdown.classList.remove('show');
-						}
-				}
-		}
+exports.login = function(req, res) {
+  var unameCheck = req.body.uname;
+  var pwordCheck = req.body.pword;
+  var i;
+  for (i=0; i<unames.length; i++) {
+    if (unames[i] == unameCheck) {
+      // here if userName matches
+      data.loginChecks[0] = true;
+      if (pwords[i] == pwordCheck) {
+        // allow users to logg in
+        data.loginChecks[1] = true;
+      }
+    }
+  }
+
+  res.json(data);
+
 }

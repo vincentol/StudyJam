@@ -27,6 +27,7 @@ var blank = require('./routes/blank');
 var addClass = require('./routes/addClass');
 var addNotes = require('./routes/addNotes');
 var notePage = require('./routes/notes');
+var user = require('./routes/user');
 // Example route
 // var user = require('./routes/user');
 
@@ -54,16 +55,21 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
+/* Get commands */
 app.get('/', login.view);
 app.get('/home', index.view);
 app.get('/blank', blank.viewBlank);
+app.get('/classPage/:name', classPage.viewClass);
+app.get('/notePage/:name', classPage.viewNote);
+
+/* Post Commands */
 app.post('/addClass', addClass.addNewClass);
 app.post('/addNotes', classPage.addNewNotes);
 app.post('/addVocab', classPage.addVocab);
 app.post('/addQuizQ', classPage.addQuizQ);
-app.get('/classPage/:name', classPage.viewClass);
-app.get('/notePage/:name', classPage.viewNote);
 app.post('/saveNotes', classPage.saveNote);
+app.post('/register', user.register);
+app.post('/login', user.login);
 // Example route
 // app.get('/users', user.list);
 

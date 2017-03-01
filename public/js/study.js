@@ -43,8 +43,7 @@ function addClass() {
 
 function reloadClasses (result) {
   console.log(result.classExists == "false");
-  if (result.classExists == "true") {
-    console.log("HERE");
+  if (result.classExists) {
     alert("Class already exists!\nTry a different name");
   }
   else {
@@ -97,14 +96,38 @@ function myFunction() {
   alert("Oops! This is not yet implemented!");
 }
 
+function register() {
+  var x = document.getElementById("registerForm");
+  var email = (x.elements[0].value);
+  var uname = (x.elements[1].value);
+  var pword = (x.elements[2].value);
+  var newAccount = { "email": email,
+    "uname": uname,
+    "pword": pword };
+  x.reset();
+  $.post("/register", newAccount, hideModal);
+}
+
 function login() {
   // move to loginControl
-  window.location.replace("/home");
+  var x = document.getElementById("myForm");
+  var uname = (x.elements[0].value);
+  var pword = (x.elements[1].value);
+  var newAccount = { "uname": uname,
+    "pword": pword };
+  x.reset();
+  $.post("/login", newAccount, loginControl);
   // get login
 }
 
-function loginControl() {
-
+function loginControl(result) {
+  if (!result.loginChecks[0]) {
+    window.alert("The username you entered does not exist! Register or try a different username!");
+  } else if (!result.loginChecks[1]) {
+    window.alert("The password you entered was incorrect for the username you entered! Try again!");
+  } else {
+    window.location.replace("/home");
+  }
 }
 
 function viewUser() {
@@ -142,13 +165,9 @@ function searchFunction() {
   }
 }
 
-var modal = document.getElementById('myModal');
-//var btn = document.getElementById("myBtn");
-var span = document.getElementsByClassName("close")[0];
 /*
-btn.onclick = function() {
-		modal.style.display = "block";
-}*/
+var modal = document.getElementById('myModal');
+var span = document.getElementsByClassName("close")[0];
 span.onclick = function() {
 		modal.style.display = "none";
 }
@@ -156,4 +175,4 @@ window.onclick = function(event) {
 		if (event.target == modal) {
 				modal.style.display = "none";
 		}
-}
+}*/

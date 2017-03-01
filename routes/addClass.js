@@ -33,9 +33,9 @@ exports.addNewClass = function(req, res) {
   }
   if (check) {
     data.classes.unshift(newClass);
-    data.classExists = "false";
+    data.classExists = false;
   } else {
-    data.classExists = "true";
+    data.classExists = true;
   }
   res.json(data);
 }
