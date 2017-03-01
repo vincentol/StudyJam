@@ -32,8 +32,21 @@ function save() {
 function addClass() {
   var x = document.getElementById("addClassForm");
   var name =(x.elements[0].value);
-  $.get("/addClass/"+name, reloadFun);
+  var className = {"name": name};
+  $.post("/addClass", className, reloadClasses, 'JSON');
   //alert("YAY!");
+  x.reset();
+}
+
+function reloadClasses (result) {
+  console.log(result.classExists == "false");
+  if (result.classExists == "true") {
+    console.log("HERE");
+    alert("Class already exists!\nTry a different name");
+  }
+  else {
+    window.location.reload();
+  }
 }
 
 function reloadFun (result) {
@@ -43,8 +56,8 @@ function reloadFun (result) {
 function addNote() {
   var x = document.getElementById("addNoteForm");
   var name =(x.elements[0].value);
-  $.get("/addNotes/"+name, reloadFun);
-  //alert("YAY!");
+  var noteName = {"name": name};
+  $.post("/addNotes", noteName, reloadFun);
 }
 /** End Adding Functions **/
 
@@ -56,8 +69,11 @@ function addVocab() {
   var x = document.getElementById("vocabForm");
   var term = (x.elements[0].value);
   var def = (x.elements[1].value);
+  var vocab = { "term": term,
+          "def": def};
   x.reset();
-  $.get("/addVocab/"+term+"/"+def, hideModal);
+  //$.get("/addVocab/"+term+"/"+def, hideModal);
+  $.post("/addVocab", vocab, hideModal);
 }
 
 function hideModal() {
@@ -65,13 +81,13 @@ function hideModal() {
 }
 
 function addQuizQ() {
-  console.log("Called");
   var x = document.getElementById("quizForm");
   var question = (x.elements[0].value);
-  console.log(question);
   var answer = (x.elements[1].value);
-  $.get("/addQuizQ/"+question+"/"+answer, hideModal);
+  var quizQ = {"question": question,
+        "answer": answer};
   x.reset();
+  $.post("/addQuizQ", quizQ,hideModal);
 }
 
 function myFunction() {
@@ -97,11 +113,12 @@ window.onclick = function(event) {
 }
 
 var modal = document.getElementById('myModal');
-var btn = document.getElementById("myBtn");
+//var btn = document.getElementById("myBtn");
 var span = document.getElementsByClassName("close")[0];
+/*
 btn.onclick = function() {
 		modal.style.display = "block";
-}
+}*/
 span.onclick = function() {
 		modal.style.display = "none";
 }

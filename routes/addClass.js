@@ -5,7 +5,7 @@ var classRef = dbRef.child("classes");
 
 
 exports.addNewClass = function(req, res) {
-  var newClassName = req.params.name;
+  var newClassName = req.body.name;
   var check = true;
   var newClass = { className: newClassName,
     classScore: "0",
@@ -31,7 +31,11 @@ exports.addNewClass = function(req, res) {
       break;
     }
   }
-  if (check) data.classes.unshift(newClass);
-  console.log(data);
+  if (check) {
+    data.classes.unshift(newClass);
+    data.classExists = "false";
+  } else {
+    data.classExists = "true";
+  }
   res.json(data);
 }

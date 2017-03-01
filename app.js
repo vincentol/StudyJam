@@ -57,10 +57,10 @@ if ('development' == app.get('env')) {
 app.get('/', login.view);
 app.get('/home', index.view);
 app.get('/blank', blank.viewBlank);
-app.get('/addClass/:name', addClass.addNewClass);
-app.get('/addNotes/:name', classPage.addNewNotes);
-app.get('/addVocab/:term/:def', classPage.addVocab);
-app.get('/addQuizQ/:question/:answer', classPage.addQuizQ);
+app.post('/addClass', addClass.addNewClass);
+app.post('/addNotes', classPage.addNewNotes);
+app.post('/addVocab', classPage.addVocab);
+app.post('/addQuizQ', classPage.addQuizQ);
 app.get('/classPage/:name', classPage.viewClass);
 app.get('/notePage/:name', classPage.viewNote);
 app.get('/saveNotes/:info', classPage.saveNote);

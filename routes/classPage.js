@@ -69,8 +69,8 @@ exports.saveNote = function(req, res) {
 };
 
 exports.addVocab = function(req, res) {
-  var term = req.params.term;
-  var def = req.params.def;
+  var term = req.body.term;
+  var def = req.body.def;
   var newVocab = { "term": term,
                   "def": def }
 
@@ -85,8 +85,8 @@ exports.addVocab = function(req, res) {
 };
 
 exports.addQuizQ = function(req, res) {
-  var question = req.params.question;
-  var answer = req.params.answer;
+  var question = req.body.question;
+  var answer = req.body.answer;
   var newQuizQ = { "question": question,
     "answer": answer }
 
@@ -103,7 +103,7 @@ exports.addQuizQ = function(req, res) {
 exports.addNewNotes = function(req, res) {
   var bool;
   var save;
-  newNotesName = req.params.name;
+  newNotesName = req.body.name;
   var newNote = { "notesName": newNotesName,
                   "noteData": ""}
   for (var i=0; i<data.classes.length; i++) {
