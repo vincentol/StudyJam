@@ -11,7 +11,7 @@ body {
 
 /* search bar */
 .search input[type=text] {
-  width: 130px;
+  width: 200px;
   box-sizing: border-box;
   border: 2px solid #ccc;
   border-radius: 4px;
