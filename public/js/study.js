@@ -5,7 +5,31 @@ var currentUserIndex = (-1);
 
 $(document).ready(function() {
   initializePage();
-})
+  $('#vocabForm2').submit(function(e) {
+    e.preventDefault();
+
+    console.log("HERE");
+    var x = document.getElementById("vocabForm2");
+    var term = (x.elements[0].value);
+    var def = (x.elements[1].value);
+    var vocab = { "term": term,
+      "def": def};
+    x.reset();
+    //$.get("/addVocab/"+term+"/"+def, hideModal);
+    $.post("/addVocab", vocab, reloadFun);
+  });
+
+  $('#quizForm2').submit(function(e) {
+    e.preventDefault();
+    var x = document.getElementById("quizForm2");
+    var question = (x.elements[0].value);
+    var answer = (x.elements[1].value);
+    var quizQ = {"question": question,
+      "answer": answer};
+    x.reset();
+    $.post("/addQuizQ", quizQ, reloadFun);
+  });
+});
 
 function initializePage() {
   $("#testjs").click(function(e) {
@@ -78,6 +102,7 @@ function goBack() {
   location.replace(document.referrer);
 }
 
+
 function addVocab() {
   var x = document.getElementById("vocabForm");
   var term = (x.elements[0].value);
@@ -87,6 +112,10 @@ function addVocab() {
   x.reset();
   //$.get("/addVocab/"+term+"/"+def, hideModal);
   $.post("/addVocab", vocab, hideModal);
+  var y = document.getElementById("snackbar");
+  y.className = "show";
+
+  setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
 }
 
 function hideModal() {
@@ -101,6 +130,10 @@ function addQuizQ() {
         "answer": answer};
   x.reset();
   $.post("/addQuizQ", quizQ, hideModal);
+  var y = document.getElementById("snackbar");
+  y.className = "show";
+
+  setTimeout(function(){ y.className = y.className.replace("show", ""); }, 3000);
 }
 
 function myFunction() {
@@ -150,7 +183,7 @@ function viewUser() {
 }
 
 window.onclick = function(event) {
-		if (!event.target.matches('.dropbtn')) {
+		if (!event.target.matches('#dropbtn')) {
 				var dropdowns = document.getElementsByClassName("dropdown-content");
 				var i;
 				for (i = 0; i < dropdowns.length; i++) {

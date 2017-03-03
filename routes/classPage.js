@@ -9,6 +9,7 @@ var classUrl;
 var noteName;
 var myData;
 var leaderboard;
+var currNote;
 
 exports.viewClass = function(req, res){
   name = req.params.name;

@@ -58,6 +58,7 @@ if ('development' == app.get('env')) {
 /* Get commands */
 app.get('/', login.view);
 app.get('/home', index.view);
+app.get('/home_v2', index.viewv2);
 app.get('/blank', blank.viewBlank);
 app.get('/classPage/:name', classPage.viewClass);
 app.get('/notePage/:name', classPage.viewNote);
