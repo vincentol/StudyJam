@@ -42,7 +42,6 @@ function addClass() {
 }
 
 function reloadClasses (result) {
-  console.log(result.classExists == "false");
   if (result.classExists) {
     alert("Class already exists!\nTry a different name");
   }
@@ -60,6 +59,18 @@ function addNote() {
   var name =(x.elements[0].value);
   var noteName = {"name": name};
   $.post("/addNotes", noteName, reloadFun);
+}
+
+function addCM() {
+  var x = document.getElementById("addCMForm");
+  var fn = (x.elements[0].value);
+  var ln = (x.elements[1].value);
+  var email = (x.elements[2].value);
+  var cm = { "fn": fn,
+    "ln": ln,
+    "email": email
+  };
+  $.post("/addCM", cm, reloadFun);
 }
 /** End Adding Functions **/
 
@@ -98,12 +109,16 @@ function myFunction() {
 
 function register() {
   var x = document.getElementById("registerForm");
-  var email = (x.elements[0].value);
-  var uname = (x.elements[1].value);
-  var pword = (x.elements[2].value);
+  var fn = (x.elements[0].value);
+  var ln = (x.elements[1].value);
+  var email = (x.elements[2].value);
+  var uname = (x.elements[3].value);
+  var pword = (x.elements[4].value);
   var newAccount = { "email": email,
     "uname": uname,
-    "pword": pword };
+    "pword": pword,
+    "fn" : fn,
+    "ln" : ln };
   x.reset();
   $.post("/register", newAccount, hideModal);
 }

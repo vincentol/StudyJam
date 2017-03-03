@@ -70,6 +70,7 @@ app.post('/addQuizQ', classPage.addQuizQ);
 app.post('/saveNotes', classPage.saveNote);
 app.post('/register', user.register);
 app.post('/login', user.login);
+app.post('/addCM', classPage.addCM);
 // Example route
 // app.get('/users', user.list);
 

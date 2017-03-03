@@ -54,6 +54,11 @@ body {
   overflow-y: auto;
 }
 
+#notes {
+  width: 75%;
+  resize: none;
+}
+
 #classList ul {
   list-style-type: none;
 }
@@ -65,7 +70,7 @@ body {
 }
 
 #notesList {
-  height: 180px;
+  height: 160px;
   width: 90%;
   overflow-y: auto;
 }
@@ -89,7 +94,7 @@ body {
 /* Side Bar */
 .sidebar {
   height: 100%;
-  width: 250px;
+  width: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -124,18 +129,18 @@ body {
 }
 
 .addquizquestion {
-  height: 15%;
-  width: 150px;
-  margin-right: 38px;;
+  height: 10%;
+  width: 75%;
+  margin-left: 5%;
   text-align: center;
   background-color: turquoise;
   box-shadow: 0 0 5px 1px lightgrey;
 }
 
 .addvocabterm {
-  height: 15%;
-  width: 150px;
-  margin-right: 38px;;
+  height: 10%;
+  width: 75%;
+  margin-left: 5%;
   text-align: center;
   background-color: violet;
   box-shadow: 0 0 5px 1px lightgrey;
@@ -245,9 +250,16 @@ div.mycard3:hover {
   box-shadow: 0 1px 5px 1px grey;
 }
 
+ul#lb {
+  list-style-type: none;
+  margin 0;
+  padding 0;
+  overflow: hidden;
+}
+
 ul#lb li {
-  display:inline;
-  margin-right: 80px;
+  margin-right: 50px;
+  float:left;
 }
 
 img#lbpic {

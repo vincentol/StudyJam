@@ -8,25 +8,34 @@ var currClass;
 var classUrl;
 var noteName;
 var myData;
+var leaderboard;
 
 exports.viewClass = function(req, res){
   name = req.params.name;
+  console.log("here");
+  console.log(data.currFN);
   for (var i=0; i<data.classes.length; i++) {
     if (data.classes[i].className == name) {
       currClass = data.classes[i];
       notesList = data.classes[i].notes;
       quizList = data.classes[i].quizQ;
       vocabList = data.classes[i].vocab;
+      leaderboard = data.classes[i].leaderboard;
+      score = data.classes[i].classScore;
       break;
     }
   }
   console.log(classUrl);
   res.render('classPage', {
+    'currFN' : data.currFN,
+    'currLN' : data.currLN,
+    'score' : score,
     'className': name,
     'notesList': notesList,
     'quizList': quizList,
     'vocabList': vocabList,
-    'classUrl': classUrl
+    'classUrl': classUrl,
+    'leaderboard': leaderboard
   });
 };
 
@@ -45,6 +54,7 @@ exports.viewNote = function(req, res) {
     }
   }
   res.render('notePage', {
+    'noteName' : noteName,
     'myData': myData
   });
 };
@@ -121,4 +131,15 @@ exports.addNewNotes = function(req, res) {
    'notesList': notesList
   });
   */
+};
+
+exports.addCM = function(req, res) {
+  newCM = req.body;
+  for (var i=0; i<data.classes.length; i++) {
+    if (name == data.classes[i].className) {
+      data.classes[i].leaderboard.push(newCM);
+      break;
+    }
+  }
+  res.json(data);
 };

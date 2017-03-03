@@ -4,7 +4,6 @@ var unames = [];
 var pwords = [];
 
 exports.register = function(req, res){
-  console.log("Here");
   var account = req.body;
   // implement existing check here TODO
   data.users.push(account);
@@ -24,6 +23,8 @@ exports.login = function(req, res) {
       if (pwords[i] == pwordCheck) {
         // allow users to logg in
         data.loginChecks[1] = true;
+        data.currFN = data.users[i].fn;
+        data.currLN = data.users[i].ln;
       }
     }
   }
