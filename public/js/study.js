@@ -179,6 +179,7 @@ function loginControl(result) {
 }
 
 function viewUser() {
+    ga("send", "event", "profile", "click");
 		document.getElementById("myDropdown").classList.toggle("show");
 }
 
