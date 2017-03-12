@@ -34,18 +34,10 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 		<!-- User Icon -->
 		<div id="profile">
 						<div id="profileIcon">
-              {{#if version2}}
               <button onclick="viewUser()" class="btn btn-info btn-sm" id="dropbtn">
                 <span class="glyphicon glyphicon-user">
                 </span> Account
               </button>
-              {{else}}
-              <button onclick="viewUser()"
-										class="btn btn-info btn-sm dropbtn" id="dropbtn">
-										<span class="glyphicon glyphicon-user">
-									</span> Account
-							</button>
-              {{/if}}
 
 							<!-- Modal for profile -->
 							<div id="myDropdown" class="dropdown-content">
