@@ -122,11 +122,14 @@ function hideModal() {
   $('.modal').modal('hide');
 }
 
+$('#rightAnswer').on('hide.bs.modal',function (e) {
+  reloadFun();
+});
+
 function hideQuiz() {
   var dq = document.getElementById("dailyQuiz");
   dq.classList.remove("in");
-  var wrong = document.getElementById("wrongAnswer");
-  wrong.modal('show');
+  $("#wrongAnswer").modal();
 }
 
 function correct() {
@@ -134,8 +137,10 @@ function correct() {
 }
 
 function showCorrect() {
-  var right = document.getElementById("rightAnswer");
-  right.modal('show');
+  var dq = document.getElementById("dailyQuiz");
+  dq.classList.remove("in");
+  $("#rightAnswer").modal();
+
 }
 
 function addQuizQ() {

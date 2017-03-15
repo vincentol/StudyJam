@@ -11,6 +11,7 @@ var myData;
 var leaderboard;
 var bool = true;
 var currI;
+var scoreplus;
 
 exports.viewClass = function(req, res){
   name = req.params.name;
@@ -24,6 +25,7 @@ exports.viewClass = function(req, res){
       vocabList = data.classes[i].vocab;
       leaderboard = data.classes[i].leaderboard;
       score = data.classes[i].classScore;
+      scoreplus = 1;
       break;
     }
   }
@@ -46,6 +48,7 @@ exports.viewClass = function(req, res){
     'vocabList': vocabList,
     'classUrl': classUrl,
     'leaderboard': leaderboard,
+    'scoreplus': scoreplus,
     'bool': data.bool
   });
 };
