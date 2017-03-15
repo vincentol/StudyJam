@@ -14,7 +14,7 @@ body {
   width: 200px;
   box-sizing: border-box;
   border: 2px solid #ccc;
-  border-radius: 4px;
+  border-radius: 25px;
   font-size: 16px;
   background-color: white;
   background-image: url('../images/search.png');
@@ -119,6 +119,7 @@ body {
 
 /* buttons */
 .button1 {
+  border-radius: 25px;
   height: 100%;
   width: 150px;
   margin-left: 38px;
@@ -129,6 +130,7 @@ body {
 }
 
 .addquizquestion {
+  border-radius: 25px;
   height: 10%;
   width: 75%;
   margin-left: 5%;
@@ -138,6 +140,7 @@ body {
 }
 
 .addvocabterm {
+  border-radius: 25px;
   height: 10%;
   width: 75%;
   margin-left: 5%;
@@ -156,6 +159,7 @@ body {
 }
 
 .notebutton {
+  border-radius: 25px;
   width: 150px;
   text-align: center;
   background-color: lightgreen;
@@ -165,6 +169,7 @@ body {
 }
 
 .quizbutton {
+  border-radius: 25px;
   width: 150px;
   text-align: center;
   background-color: lightblue;
@@ -174,6 +179,7 @@ body {
 }
 
 .studyguidebutton {
+  border-radius: 25px;
   width: 150px;
   text-align: center;
   background-color: DeepPink;

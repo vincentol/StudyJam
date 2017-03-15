@@ -53,6 +53,7 @@
       <!-- Search Bar -->
       <div class="search">
         <form>
+          <img src="/images/StudyJam.gif" style="width: 50px;">
           <input type="text" id="searchBar" name="search" onkeyup="searchFunction()" placeholder="Search Notes..">
         </form>
       </div>
@@ -164,9 +165,9 @@
 
       <h1>LeaderBoard</h1>
       <ul id="lb">
-        <li><center><img src="/images/placeholder.png" style="height: 60px;"><br>{{currFN}} {{currLN}}<br>Score: {{score}}</center></li>
+        <li><center><img src="/images/placeholder.png" style="height: 60px; clip-path: circle();"><br>{{currFN}} {{currLN}}<br>Score: {{score}}</center></li>
         {{#each leaderboard}}
-        <li><center><img src="/images/placeholder.png" style="height: 60px;"><br>{{fn}} {{ln}}<br>Score: 0</center></li>
+        <li><center><img src="/images/placeholder.png" style="height: 60px; clip-path: circle();"><br>{{fn}} {{ln}}<br>Score: 0</center></li>
         {{/each}}
       </ul>
 
