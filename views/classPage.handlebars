@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
 
+
   <body>
 
     <!-- Top -->
@@ -199,6 +200,59 @@
         </div>
       </div>
       <!-- End Modal -->
+
+
+      <div id="wrongAnswer" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h1>Oops, that was the wrong answer!</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      
+      <div id="rightAnswer" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h1>YAY! That was correct! Your score is now {{score}}</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Modal -->
+
+
+      {{#if bool}}
+      <!-- Modal for Daily Quiz --> 
+      <div id="dailyQuiz" class="modal in fade" style="padding-top: 100px; width: 600px;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Daily Quiz!</h2>
+          </div>
+          <div class="modal-body">
+            <h3>Q: Going out to users to discover what they need, often a solution to a problem.</h3>
+            <br/>
+            <button type="button" class="quizbutton" id="wrong" onclick="hideQuiz()">
+              <center>Wizard of Oz</center>
+            </button>
+            <button type="button" class="quizbutton" id="wrong" onclick="hideQuiz()">
+              <center>User Testing</center>
+            </button>
+            <br/>
+            <button type="button" class="quizbutton" id="right" onclick="correct()">
+              <center>NeedFinding</center>
+            </button>
+            <button type="button" class="quizbutton" id="wrong" onclick="hideQuiz()">
+              <center>Design</center>
+            </button>
+          </div>
+        </div>
+      </div>
+    {{/if}}
 
     </div>
     <!-- End Main Content -->

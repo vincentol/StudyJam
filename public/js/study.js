@@ -122,6 +122,22 @@ function hideModal() {
   $('.modal').modal('hide');
 }
 
+function hideQuiz() {
+  var dq = document.getElementById("dailyQuiz");
+  dq.classList.remove("in");
+  var wrong = document.getElementById("wrongAnswer");
+  wrong.modal('show');
+}
+
+function correct() {
+  $.get("/score", showCorrect);
+}
+
+function showCorrect() {
+  var right = document.getElementById("rightAnswer");
+  right.modal('show');
+}
+
 function addQuizQ() {
   var x = document.getElementById("quizForm");
   var question = (x.elements[0].value);

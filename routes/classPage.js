@@ -9,13 +9,15 @@ var classUrl;
 var noteName;
 var myData;
 var leaderboard;
+var bool = true;
+var currI;
 
 exports.viewClass = function(req, res){
   name = req.params.name;
-  console.log("here");
   console.log(data.currFN);
   for (var i=0; i<data.classes.length; i++) {
     if (data.classes[i].className == name) {
+      currI = i;
       currClass = data.classes[i];
       notesList = data.classes[i].notes;
       quizList = data.classes[i].quizQ;
@@ -25,7 +27,15 @@ exports.viewClass = function(req, res){
       break;
     }
   }
-  console.log(classUrl);
+  // Wizard of Oz - quiz shows up only once
+  if (name == "Cogs 120" && bool == true) {
+    data.bool = true;
+    bool = false;
+  }
+  else {
+    data.bool = false;
+  }
+
   res.render('classPage', {
     'currFN' : data.currFN,
     'currLN' : data.currLN,
@@ -35,9 +45,16 @@ exports.viewClass = function(req, res){
     'quizList': quizList,
     'vocabList': vocabList,
     'classUrl': classUrl,
-    'leaderboard': leaderboard
+    'leaderboard': leaderboard,
+    'bool': data.bool
   });
 };
+
+exports.score = function(req, res) {
+  score++;
+  data.classes[currI].classScore = score;
+  res.json(data);
+}
 
 exports.viewNote = function(req, res) {
   noteName = req.params.name;
@@ -83,6 +100,7 @@ exports.addVocab = function(req, res) {
   var def = req.body.def;
   var newVocab = { "term": term,
                   "def": def }
+  bool = true;
 
   for (var i=0; i<data.classes.length; i++) {
     if (data.classes[i].className == name) {

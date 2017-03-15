@@ -62,6 +62,7 @@ app.get('/home_v2', index.viewv2);
 app.get('/blank', blank.viewBlank);
 app.get('/classPage/:name', classPage.viewClass);
 app.get('/notePage/:name', classPage.viewNote);
+app.get('/score', classPage.score);
 
 /* Post Commands */
 app.post('/addClass', addClass.addNewClass);
